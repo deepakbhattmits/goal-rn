@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import { StyleSheet, View, FlatList, Button } from 'react-native';
+import { StyleSheet, View, FlatList, Alert, Button } from 'react-native';
 import GoalInput from './src/Components/GoalInput';
 import GoalItem from './src/Components/GoalItem';
 const App = ( ) => {
@@ -15,7 +15,12 @@ const App = ( ) => {
       setIsAddMode(false);
       setEnteredGoal('');
     } else {
-      alert('Please Enter Goal');
+      // alert('Please Enter Goal');
+      Alert.alert(
+        'Empty Text / Input  ! ',
+        'Please Enter Goal',
+        [ {text: 'Okay', style:'destructive' } ]
+        )
       }
   }
   const removeHandler = goalId => {
